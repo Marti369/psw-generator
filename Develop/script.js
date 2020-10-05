@@ -123,20 +123,35 @@ var createPassword = function() {
     return newpassword;
 };
 
+//in this function we group all the function that randomize the different inputs
+var pswContainer = function() {
+    responseLowerCase();
+    responseUpperCase();
+    responseSymbolAsk();
+    responseNumberAsk();
+};
 
+//we create a fuction depending on responses from prompt questions
+var generatePassword = function() {
+    responseLengthPsw();
+    pswContainer();
+    groupPsw();
+    var newpassword = createPassword();
+    return newpassword;
+};
 // calling the question functions to test the functions work
-responseLengthPsw();
-responseLowerCase();
-responseNumberAsk();
-responseUpperCase();
-responseSymbolAsk();
-groupPsw();
+//responseLengthPsw();
+//responseLowerCase();
+//responseNumberAsk();
+//responseUpperCase();
+//responseSymbolAsk();
+//groupPsw();
 console.log(possiblePsw);
 console.log(createPassword());
 createPassword();
 
 
-/*
+
 // Write password to the #password input
 function writePassword() {
     var newpassword = generatePassword();
@@ -148,6 +163,3 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-
-*/
