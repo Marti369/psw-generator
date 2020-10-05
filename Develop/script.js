@@ -2,6 +2,15 @@
 var generateBtn = document.querySelector("#generate");
 
 
+//variable declarations
+var possiblePsw;
+var lengthPsw;
+var lowerCase;
+var upperCase;
+var numberAsk;
+var symbolAsk;
+
+
 //generation of possible passwords
 // generate a random lower case letter
 var lowerLetter = function() {
@@ -83,8 +92,36 @@ var responseLowerCase = function() {
     }
 };
 
+// add a function that places or concatenates all possible random numbers
 
+var groupPsw = function() {
+    //this variable was delcared in global
+    possiblePsw = "";
+    if (numberAsk) {
+        possiblePsw = numRandom();
+    }
+    if (symbolAsk) {
+        possiblePsw = possiblePsw.concat(symRandom());
+    }
+    if (lowerCase) {
+        possiblePsw = possiblePsw.concat(lowerLetter());
+    }
+    if (upperCase) {
+        possiblePsw = possiblePsw.concat(upperLetter());
+    }
 
+};
+
+//create a new password fucntion that works with the length obtain by prompt
+var createPassword = function() {
+    var newpassword = "";
+    for (var l = 0; l < lengthPsw; l++) { //l stands for length
+        var char = Math.floor(Math.random() * possiblePsw.length);
+        var word = possiblePsw.charAt(char);
+        newpassword = newpassword.concat(word);
+    }
+    return newpassword;
+};
 
 
 // calling the question functions to test the functions work
@@ -93,6 +130,10 @@ responseLowerCase();
 responseNumberAsk();
 responseUpperCase();
 responseSymbolAsk();
+groupPsw();
+console.log(possiblePsw);
+console.log(createPassword());
+createPassword();
 
 
 /*
