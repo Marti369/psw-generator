@@ -27,3 +27,9 @@ Edwin Martinez
 
 
 ![Password Generator Demo](./develop/img/generator.PNG)
+
+
+
+# Pending Issues
+
+A pending issue is pending as I will have a tutor on Tuesday to help me why my functions were not working appropiately.
