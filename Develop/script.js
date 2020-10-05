@@ -10,6 +10,13 @@ var upperCase;
 var numberAsk;
 var symbolAsk;
 
+//added temporary  variables because function was not working
+var upperLetter = "ZXCVBNMASDFGHJKLQWERTYUIOP";
+var lowerLetter = "asdfghjklzxcvbnmqwertyuiop";
+var numRandom = "1234567890";
+var symRandom = " <>?/:;{}[]!@#$%^&*()-=+";
+
+/* I will uncomment this once I can figure out why functiosn not working to generate random characters
 
 //generation of possible passwords
 // generate a random lower case letter
@@ -37,6 +44,11 @@ console.log(upperLetter());
 console.log(lowerLetter());
 console.log(symRandom());
 console.log(numRandom());
+*/
+console.log(upperLetter);
+console.log(lowerLetter);
+console.log(symRandom);
+console.log(numRandom);
 
 
 //add questions to ask the user options
@@ -98,16 +110,16 @@ var groupPsw = function() {
     //this variable was delcared in global
     possiblePsw = "";
     if (numberAsk) {
-        possiblePsw = numRandom();
+        possiblePsw = numRandom;
     }
     if (symbolAsk) {
-        possiblePsw = possiblePsw.concat(symRandom());
+        possiblePsw = possiblePsw.concat(symRandom);
     }
     if (lowerCase) {
-        possiblePsw = possiblePsw.concat(lowerLetter());
+        possiblePsw = possiblePsw.concat(lowerLetter);
     }
     if (upperCase) {
-        possiblePsw = possiblePsw.concat(upperLetter());
+        possiblePsw = possiblePsw.concat(upperLetter);
     }
 
 };
